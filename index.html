@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CocoaCare - Home</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-y6PZ4Pe4LDV0cAz5rNPTiZ3tj+1lOzNMc0PbITdBAxyL5NOnFz+t0+g7G05XQuDhQJ5Ay38F63Cy6VEKZhC5Ag=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">CocoaCare 🌿</a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="analysis.html">Image Analysis</a></li>
+      <li><a href="about.html">About the App</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="theme-toggle-container">
+    <li class="theme-toggle">
+    <span class="theme-icon">🌞</span>
+    <label class="switch">
+      <input type="checkbox" id="themeSwitch" />
+      <span class="slider round"></span>
+    </label>
+    <span class="theme-icon">🌙</span>
+    </li>
+  </div>
+
+  <div class="background"></div>
+
+  <main class="page-content">
+    <section class="hero card">
+      <h1>Welcome to CocoaCare 🌿</h1>
+      <p>
+        Harness the power of AI to detect diseases in your cocoa plants quickly and accurately.
+      </p>
+      <a href="analysis.html" class="cta-button">
+        <i class="fas fa-microscope"></i> Start Analysis
+      </a>
+    </section>
+
+    <section class="features">
+      <div class="feature card">
+        <i class="fas fa-leaf fa-3x"></i>
+        <h3>Easy Upload</h3>
+        <p>Upload or snap pictures directly from your device for instant disease detection.</p>
+      </div>
+      <div class="feature card">
+        <i class="fas fa-robot fa-3x"></i>
+        <h3>AI Powered</h3>
+        <p>Advanced AI models trained specifically on cocoa leaf diseases.</p>
+      </div>
+      <div class="feature card">
+        <i class="fas fa-seedling fa-3x"></i>
+        <h3>Expert Advice</h3>
+        <p>Receive clear recommendations on how to manage your plants effectively.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/script.js"></script>
+
+  <footer class="footer card">
+    <div class="footer-content">
+      <p>&copy; 2025 CocoaCare. All rights reserved.</p>
+      <p>
+        Built with ❤️ for cocoa farmers in Nigeria.<br />
+        Developed as a Final Year Project at Covenant University.
+      </p>
+      <div class="footer-links">
+        <a href="mailto:toluwanimi.adeyemi@stu.cu.edu.ng"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://wa.me/2348157596309" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://github.com/1demilade" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

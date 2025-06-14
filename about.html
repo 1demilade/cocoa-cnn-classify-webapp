@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About the App - CocoaCare</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">CocoaCare 🌿</a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="analysis.html">Image Analysis</a></li>
+      <li><a href="about.html">About the App</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="theme-toggle-container">
+    <li class="theme-toggle">
+    <span class="theme-icon">🌞</span>
+    <label class="switch">
+      <input type="checkbox" id="themeSwitch" />
+      <span class="slider round"></span>
+    </label>
+    <span class="theme-icon">🌙</span>
+    </li>
+  </div>
+
+  <div class="background"></div>
+
+  <main class="page-content">
+    <section class="card">
+      <h1>About CocoaCare</h1>
+      <p>
+        <strong>CocoaCare</strong> is a web-based diagnostic tool designed to support cocoa farmers by enabling early detection of common leaf diseases using artificial intelligence. This application was developed as part of a final year project in Computer Engineering, Covenant University. This project combines computer vision, responsive web design to provide real-world agricultural support.
+      </p>
+      <p>
+        Farmers can either upload or take a photo of a cocoa leaf, and the app will analyze the image using a trained deep learning model to identify possible diseases. It then returns:
+        <ul>
+          <li>A predicted disease name</li>
+          <li>A confidence score indicating the model’s certainty</li>
+          <li>Clear, practical recommendations tailored to the diagnosis</li>
+        </ul>
+      </p>
+      <p>
+        CocoaCare is built for ease of use on both mobile and desktop devices, It  features like theme switching (light/dark mode) and upload history.
+      </p>
+      <p>
+        By offering farmers quick, insights into plant health, this research project aims to promote informed decision-making and help reduce crop loss through timely intervention.
+      </p>
+    </section>
+  </main>
+
+  <script src="assets/js/script.js"></script>
+
+  <footer class="footer card">
+    <div class="footer-content">
+      <p>&copy; 2025 CocoaCare. All rights reserved.</p>
+      <p>
+        Built with ❤️ for cocoa farmers in Nigeria.<br />
+        Developed as a Final Year Project at Covenant University.
+      </p>
+      <div class="footer-links">
+        <a href="mailto:toluwanimi.adeyemi@stu.cu.edu.ng"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://wa.me/2348157596309" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://github.com/1demilade" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
