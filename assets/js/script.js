@@ -6,6 +6,9 @@ const form = document.getElementById('imageForm');
 const loading = document.getElementById('loading');
 const results = document.getElementById('resultsSection');
 
+// API URL - UPDATE THIS WITH YOUR NGROK URL
+const API_URL = 'https://62e3-35-238-147-10.ngrok-free.app'; // Replace this with your actual ngrok URL
+
 // Theme toggle
 const themeSwitch = document.getElementById('themeSwitch');
 const currentTheme = localStorage.getItem('theme') || 'light';
@@ -51,6 +54,18 @@ if (hamburger && navLinks) {
 function handlePreview(input) {
   const file = input.files[0];
   if (file) {
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      alert('Please select a valid image file.');
+      return;
+    }
+    
+    // Validate file size (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      alert('File size too large. Please select an image smaller than 10MB.');
+      return;
+    }
+    
     const reader = new FileReader();
     reader.onload = (e) => {
       if (preview) {
@@ -105,14 +120,27 @@ if (form) {
     formData.append('image', file);
 
     try {
-      const response = await fetch('https://e931-35-197-109-36.ngrok-free.app/predict', {
+      const response = await fetch(`${API_URL}/predict`, {
         method: 'POST',
         body: formData,
+        headers: {
+          'ngrok-skip-browser-warning': 'true' // Skip ngrok browser warning
+        }
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       const data = await response.json();
 
       if (loading) loading.style.display = 'none';
+      
+      if (data.error) {
+        alert(`Error: ${data.error}`);
+        return;
+      }
+      
       if (results) results.style.display = 'block';
 
       const diseaseName = document.getElementById('diseaseName');
@@ -146,7 +174,7 @@ if (form) {
 
     } catch (error) {
       console.error('Error:', error);
-      alert('Something went wrong. Please try again.');
+      alert(`Something went wrong: ${error.message}. Please check if the API is running and try again.`);
       if (loading) loading.style.display = 'none';
     }
   });
@@ -177,15 +205,15 @@ function renderHistory() {
     return;
   }
 
-  history.forEach((entry) => {
+  history.forEach((entry, index) => {
     const div = document.createElement('div');
     div.className = 'history-entry';
     div.innerHTML = `
       <p><strong>Date:</strong> ${entry.date}</p>
-      <img src="${entry.image}" width="150" />
+      <img src="${entry.image}" alt="Diagnosis ${index + 1}" style="max-width: 150px; border-radius: 8px;" />
       <p><strong>Disease:</strong> ${entry.result.disease}</p>
       <p><strong>Confidence:</strong> ${entry.result.confidence}</p>
-      <p><strong>Recommendation:</strong> ${entry.result.recommendation}</p>
+      <div><strong>Recommendation:</strong> ${entry.result.recommendation}</div>
       <hr>
     `;
     historyList.appendChild(div);
