@@ -7,7 +7,7 @@ const loading = document.getElementById('loading');
 const results = document.getElementById('resultsSection');
 
 // API URL - UPDATE THIS WITH YOUR NGROK URL
-const API_URL = 'https://b038-34-138-241-61.ngrok-free.app'; // Replace this with your actual ngrok URL
+const API_URL = 'https://7144-35-233-221-6.ngrok-free.app'; // Replace this with your actual ngrok URL
 
 // Theme toggle with fallback for environments without localStorage
 const themeSwitch = document.getElementById('themeSwitch');
@@ -75,21 +75,7 @@ function handlePreview(input) {
   }
 
   const file = input.files[0];
-  
-  // Validate file type
-  if (!file.type.startsWith('image/')) {
-    alert('Please select a valid image file.');
-    input.value = ''; // Clear the input
-    return;
-  }
-  
-  // Validate file size (max 10MB)
-  if (file.size > 10 * 1024 * 1024) {
-    alert('File size too large. Please select an image smaller than 10MB.');
-    input.value = ''; // Clear the input
-    return;
-  }
-  
+
   const reader = new FileReader();
   reader.onload = (e) => {
     if (preview) {
@@ -169,8 +155,8 @@ if (form) {
       // Show results
       if (results) results.style.display = 'block';
 
-      const diseaseName = document.getElementById('diseaseName');
-      const confidenceScore = document.getElementById('confidenceScore');
+      const diseaseName = document.getElementById('predicted_class');
+      const confidenceScore = document.getElementById('confidence');
       const recommendation = document.getElementById('recommendation');
 
       if (diseaseName) diseaseName.textContent = data.predicted_class || 'Unknown';
