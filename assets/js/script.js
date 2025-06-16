@@ -7,7 +7,7 @@ const loading = document.getElementById('loading');
 const results = document.getElementById('resultsSection');
 
 // API URL - UPDATE THIS WITH YOUR NGROK URL
-const API_URL = 'https://62e3-35-238-147-10.ngrok-free.app'; // Replace this with your actual ngrok URL
+const API_URL = 'https://59fc-34-23-223-131.ngrok-free.app'; // Replace this with your actual ngrok URL
 
 // Theme toggle
 const themeSwitch = document.getElementById('themeSwitch');
