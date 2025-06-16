@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Image Analysis - CocoaCare</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <nav class="navbar">
@@ -45,13 +45,13 @@
       </div>
       <form id="imageForm" action="https://3028-34-134-67-171.ngrok-free.app/predict" method="post" enctype="multipart/form-data">
         <!-- Hidden file input for upload -->
-        <input type="file" accept="image/*" id="uploadInput" style="display:none;" />
+        <input type="file" accept="image/*" id="uploadInput" name="image" style="display:none;" />
         
         <!-- Styled label that triggers upload input -->
         <label for="uploadInput" class="btn">Upload Image</label>
         
         <!-- Hidden file input for camera capture -->
-        <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display:none;" />
+        <input type="file" accept="image/*" capture="environment" id="cameraInput" name="image" style="display:none;" />
         
         <!-- Button to trigger camera input -->
         <button type="button" id="takePhotoBtn" class="btn">Take Photo</button>
