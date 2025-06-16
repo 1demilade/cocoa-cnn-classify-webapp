@@ -105,7 +105,7 @@ if (form) {
     formData.append('image', file);
 
     try {
-      const response = await fetch('https://3d07-35-197-109-36.ngrok-free.app/predict', {
+      const response = await fetch('https://e931-35-197-109-36.ngrok-free.app/predict', {
         method: 'POST',
         body: formData,
       });
