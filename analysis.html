@@ -43,7 +43,7 @@
       <div class="preview-container">
         <img id="imagePreview" src="" alt="Image Preview" style="display:none; max-width: 100%; margin-top: 10px; border-radius: 8px;"/>
       </div>
-      <form id="imageForm">
+      <form id="imageForm" action="/predict" method="post" enctype="multipart/form-data">
         <!-- Hidden file input for upload -->
         <input type="file" accept="image/*" id="uploadInput" style="display:none;" />
         
