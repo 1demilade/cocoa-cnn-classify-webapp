@@ -7,7 +7,7 @@ const loading = document.getElementById('loading');
 const results = document.getElementById('resultsSection');
 
 // API URL - UPDATE THIS WITH YOUR NGROK URL
-const API_URL = 'https://0fb7-34-75-0-186.ngrok-free.app'; // Replace this with your actual ngrok URL
+const API_URL = 'https://970d-34-69-210-125.ngrok-free.app'; // Replace this with your actual ngrok URL
 
 // Theme toggle with fallback for environments without localStorage
 const themeSwitch = document.getElementById('themeSwitch');
